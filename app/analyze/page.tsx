@@ -51,7 +51,13 @@ export default function AnalyzePage() {
         <h1 className="text-3xl font-bold">
           Analysis for <span className="text-blue-400">{username}</span>
         </h1>
-        <p className="text-gray-400 text-sm">AI-powered portfolio feedback</p>
+        <p className="text-gray-400 text-xs">
+          Developed by: Onyekachukwu Anene
+        </p>
+        <p className="text-gray-400 text-sm">
+          ----------------------------------
+        </p>
+        <p className="text-white-400 text-sm">AI-powered GitHub portfolio feedback</p>
       </div>
 
       {/* Loading */}

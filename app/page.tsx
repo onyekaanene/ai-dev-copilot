@@ -51,6 +51,9 @@ export default function Home() {
           Analyze My GitHub →
         </a>
       </div>
+      <p className="absolute bottom-4 text-xs text-white-500">
+        Developed and designed by: Onyekachukwu Anene
+      </p>
     </main>
   );
 }
