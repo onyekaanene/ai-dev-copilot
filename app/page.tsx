@@ -15,16 +15,15 @@ export default function Home() {
       </p>
 
       {/* Input with prefix */}
-      <div className="flex items-center border rounded overflow-hidden">
-        <span className="bg-gray-100 px-3 py-2 text-gray-600 border-r mr-2">
-          github.com/
-        </span>
+      <div className="flex items-center border rounded overflow-hidden p-2 w-full max-w-md">
+        <span className="bg-gray-100 px-3 py-2 text-gray-500">github.com/</span>
+
         <input
           type="text"
           placeholder="username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          className="p-2 outline-none"
+          className="p-2 flex-1 outline-none"
         />
       </div>
 

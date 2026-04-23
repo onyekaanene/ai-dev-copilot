@@ -10,5 +10,18 @@ export async function GET(request: Request) {
 
   const data = await res.json();
 
-  return Response.json(data);
+  // Clean + filter repos
+  const filtered = data
+    .filter((repo: any) => !repo.fork && repo.stargazers_count >= 0)
+    .slice(0, 8) // limit results
+    .map((repo: any) => ({
+      id: repo.id,
+      name: repo.name,
+      description: repo.description,
+      stars: repo.stargazers_count,
+      language: repo.language,
+      url: repo.html_url,
+    }));
+
+  return Response.json(filtered);
 }
