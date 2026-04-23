@@ -6,33 +6,51 @@ export default function Home() {
   const [username, setUsername] = useState("");
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center gap-6 px-4">
-      <h1 className="text-3xl font-bold">AI Dev Copilot</h1>
+    <main className="min-h-screen flex flex-col items-center justify-center px-4">
+      {/* Glow background */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.15),transparent_50%)] pointer-events-none" />
 
-      <p className="text-gray-500 text-center max-w-md">
-        Analyze your GitHub profile and get insights to improve your chances of
-        getting hired.
-      </p>
+      <div className="relative text-center max-w-xl w-full space-y-8">
+        <h1 className="text-5xl font-bold leading-tight">
+          Turn Your GitHub Into
+          <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+            {" "}
+            Job Offers
+          </span>
+        </h1>
 
-      {/* Input with prefix */}
-      <div className="flex items-center border rounded overflow-hidden p-2 w-full max-w-md">
-        <span className="bg-gray-100 px-3 py-2 text-gray-500">github.com/</span>
+        <p className="text-gray-400 text-lg">
+          AI-powered insights to improve your portfolio, impress recruiters, and
+          get hired faster.
+        </p>
 
-        <input
-          type="text"
-          placeholder="username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          className="p-2 flex-1 outline-none"
-        />
+        {/* Input */}
+        <div className="flex items-center border border-gray-800 bg-gray-900/60 backdrop-blur rounded-xl overflow-hidden shadow-lg">
+          <span className="px-4 py-3 text-gray-500 border-r border-gray-800">
+            github.com/
+          </span>
+
+          <input
+            type="text"
+            placeholder="your-username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            className="flex-1 bg-transparent p-3 outline-none text-white placeholder-gray-600"
+          />
+        </div>
+
+        {/* Button */}
+        <a
+          href={username ? `/analyze?username=${username}` : "#"}
+          className={`block w-full py-3 rounded-xl font-medium transition ${
+            username
+              ? "bg-white text-black hover:scale-[1.02]"
+              : "bg-gray-700 text-gray-400 cursor-not-allowed"
+          }`}
+        >
+          Analyze My GitHub →
+        </a>
       </div>
-
-      <a
-        href={`/analyze?username=${username}`}
-        className="bg-black text-white px-5 py-2 rounded"
-      >
-        Analyze
-      </a>
     </main>
   );
 }

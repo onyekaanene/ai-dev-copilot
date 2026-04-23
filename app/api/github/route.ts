@@ -1,19 +1,20 @@
-export async function GET(request: Request) {
-  const { searchParams } = new URL(request.url);
+export async function GET(req: Request) {
+  const { searchParams } = new URL(req.url);
   const username = searchParams.get("username");
 
   if (!username) {
-    return Response.json({ error: "No username" });
+    return Response.json({ error: "Username required" }, { status: 400 });
   }
 
-  const res = await fetch(`https://api.github.com/users/${username}/repos`);
+  const res = await fetch(
+    `https://api.github.com/users/${username}/repos?sort=updated`,
+  );
 
   const data = await res.json();
 
-  // Clean + filter repos
   const filtered = data
-    .filter((repo: any) => !repo.fork && repo.stargazers_count >= 0)
-    .slice(0, 8) // limit results
+    .filter((repo: any) => !repo.fork)
+    .slice(0, 8)
     .map((repo: any) => ({
       id: repo.id,
       name: repo.name,

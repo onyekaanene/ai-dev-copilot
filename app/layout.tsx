@@ -2,7 +2,7 @@ import "./globals.css";
 
 export const metadata = {
   title: "AI Dev Copilot",
-  description: "Analyze your GitHub and get hired faster",
+  description: "Analyze GitHub and get hired faster",
 };
 
 export default function RootLayout({
@@ -12,7 +12,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-gray-950 text-white">{children}</body>
+      <body className="bg-gradient-to-b from-gray-950 via-black to-gray-950 text-white antialiased">
+        {children}
+      </body>
     </html>
   );
 }
