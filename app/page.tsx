@@ -16,7 +16,7 @@ export default function Home() {
 
       {/* Input with prefix */}
       <div className="flex items-center border rounded overflow-hidden">
-        <span className="bg-gray-100 px-3 py-2 text-gray-600 border-r">
+        <span className="bg-gray-100 px-3 py-2 text-gray-600 border-r mr-2">
           github.com/
         </span>
         <input
@@ -24,7 +24,7 @@ export default function Home() {
           placeholder="username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          className="p-2 pl-3 outline-none"
+          className="p-2 outline-none"
         />
       </div>
 
