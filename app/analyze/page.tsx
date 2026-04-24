@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 type Repo = {
   id: number;
@@ -16,34 +17,35 @@ export default function AnalyzePage() {
   const [analysis, setAnalysis] = useState("");
   const [loading, setLoading] = useState(true);
 
-  const params = new URLSearchParams(window.location.search);
-  const username = params.get("username");
+  const searchParams = useSearchParams();
+  const username = searchParams.get("username");
+
 
   useEffect(() => {
     if (!username) return;
 
-    const fetchData = async () => {
-      const res = await fetch(`/api/github?username=${username}`);
-      const data = await res.json();
-      setRepos(data);
+      const fetchData = async () => {
+        const res = await fetch(`/api/github?username=${username}`);
+        const data = await res.json();
+        setRepos(data);
 
-      const aiRes = await fetch("/api/analyze", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ repos: data }),
-      });
+        const aiRes = await fetch("/api/analyze", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ repos: data }),
+        });
 
-      const aiData = await aiRes.json();
-      setAnalysis(aiData.result);
+        const aiData = await aiRes.json();
+        setAnalysis(aiData.result);
 
-      setLoading(false);
-    };
+        setLoading(false);
+      };
 
-    fetchData();
+      fetchData();
   }, [username]);
-
+  
   return (
     <main className="min-h-screen px-4 py-10 max-w-5xl mx-auto">
       {/* Header */}
