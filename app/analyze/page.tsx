@@ -35,9 +35,10 @@ async function getAnalysis(repos: Repo[]) {
 export default async function AnalyzePage({
   searchParams,
 }: {
-  searchParams: { username?: string };
+  searchParams: Promise<{ username?: string }>;
 }) {
-  const username = searchParams.username;
+  const params = await searchParams;
+  const username = params.username;
 
   if (!username) {
     return (
@@ -95,11 +96,11 @@ export default async function AnalyzePage({
                 {repo.language || "Unknown"}
               </span>
 
-              <a
+              
                 href={repo.url}
                 target="_blank"
                 className="text-blue-400 text-xs"
-              >
+              <a>
                 View →
               </a>
             </div>

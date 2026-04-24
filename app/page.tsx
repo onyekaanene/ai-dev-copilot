@@ -18,7 +18,6 @@ export default function Home() {
             Job Offers
           </span>
         </h1>
-
         <p className="text-gray-400 text-lg">
           AI-powered insights to improve your portfolio, impress recruiters, and
           get hired faster.
@@ -29,7 +28,6 @@ export default function Home() {
           <span className="px-4 py-3 text-gray-500 border-r border-gray-800">
             github.com/
           </span>
-
           <input
             type="text"
             placeholder="your-username"
