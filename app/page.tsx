@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link"; // Add this import
 
 export default function Home() {
   const [username, setUsername] = useState("");
@@ -37,19 +38,24 @@ export default function Home() {
           />
         </div>
 
-        {/* Button */}
-        <a
-          href={username ? `/analyze?username=${username}` : "#"}
-          className={`block w-full py-3 rounded-xl font-medium transition ${
-            username
-              ? "bg-white text-black hover:scale-[1.02]"
-              : "bg-gray-700 text-gray-400 cursor-not-allowed"
-          }`}
-        >
-          Analyze My GitHub →
-        </a>
+        {/* Button - CHANGED TO LINK */}
+        {username ? (
+          <Link
+            href={`/analyze?username=${username}`}
+            className="block w-full py-3 rounded-xl font-medium transition bg-white text-black hover:scale-[1.02]"
+          >
+            Analyze My GitHub →
+          </Link>
+        ) : (
+          <button
+            disabled
+            className="block w-full py-3 rounded-xl font-medium transition bg-gray-700 text-gray-400 cursor-not-allowed"
+          >
+            Analyze My GitHub →
+          </button>
+        )}
       </div>
-      <p className="absolute bottom-4 text-xs text-white-500">
+      <p className="absolute bottom-4 text-xs text-gray-500">
         Developed and designed by: Onyekachukwu Anene
       </p>
     </main>

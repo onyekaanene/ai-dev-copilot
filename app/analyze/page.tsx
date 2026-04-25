@@ -48,6 +48,7 @@ export default async function AnalyzePage({
     );
   }
 
+
   const repos = await getRepos(username);
   const analysis = await getAnalysis(repos);
 
@@ -96,12 +97,13 @@ export default async function AnalyzePage({
                 {repo.language || "Unknown"}
               </span>
 
-              
+              <a
                 href={repo.url}
                 target="_blank"
-                className="text-blue-400 text-xs"
-              <a>
-                View →
+                rel="noopener noreferrer"
+                className="text-blue-400 text-xs hover:underline"
+              >
+                View Repo →
               </a>
             </div>
           </div>
