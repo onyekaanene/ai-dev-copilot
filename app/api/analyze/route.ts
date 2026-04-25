@@ -4,19 +4,20 @@ export async function POST(req: Request) {
     const repos = body.repos;
 
     const prompt = `
-You are a senior software engineer reviewing a junior developer's GitHub.
+      You are a senior software engineer reviewing a junior developer's GitHub.
 
-Repos:
-${JSON.stringify(repos, null, 2)}
+      Repos:
+      ${JSON.stringify(repos, null, 2)}
 
-Give:
-1. Overall rating (1–10)
-2. Key weaknesses
-3. Specific improvements
-4. What is missing to get hired
+      Give:
+      1. Overall rating (1–10)
+      2. Key weaknesses
+      3. Specific improvements
+      4. What is missing to get hired
 
-Be concise and structured.
-`;
+      Be concise and structured.
+      `;
+
 
     const res = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
@@ -26,7 +27,7 @@ Be concise and structured.
         "anthropic-version": "2023-06-01",
       },
       body: JSON.stringify({
-        model: "claude-opus-4-7",
+        model: "claude-haiku-4-5",
         max_tokens: 800,
         messages: [
           {
