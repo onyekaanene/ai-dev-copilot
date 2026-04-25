@@ -24,7 +24,7 @@ export default function Home() {
             Meet Zeva
           </span>
           🤖: "I give AI-powered insights to boost your portfolio and land jobs
-          faster — enter your GitHub and get surprised!"
+          faster — enter your GitHub username and get surprised!"
         </p>
 
         {/* Input */}
