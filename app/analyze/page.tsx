@@ -57,19 +57,25 @@ export default async function AnalyzePage({
       {/* Header */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold">
-          Analysis for <span className="text-blue-400">{username}</span>
+          <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+            Zeva
+          </span>
+          🤖: My Analysis for{" "}
+          <span className="text-blue-400">{username}</span>
         </h1>
 
         <p className="text-gray-400 text-xs">Developed by Onyekachukwu Anene</p>
 
-        <p className="text-gray-400 text-sm mt-1">
+        {/*<p className="text-gray-400 text-sm mt-1">
           AI-powered GitHub portfolio feedback
-        </p>
+        </p>*/}
       </div>
 
       {/* AI Feedback */}
       <div className="mb-8 p-6 bg-gray-900/70 border border-gray-800 rounded-2xl">
-        <h2 className="text-xl font-semibold mb-3">AI Feedback</h2>
+        <h2 className="text-xl font-semibold mb-3">
+          AI-powered GitHub portfolio feedback
+        </h2>
 
         <p className="text-gray-300 whitespace-pre-line">
           {analysis || "No feedback available"}

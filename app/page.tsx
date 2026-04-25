@@ -20,8 +20,11 @@ export default function Home() {
           </span>
         </h1>
         <p className="text-gray-400 text-lg">
-          AI-powered insights to improve your portfolio, impress recruiters, and
-          get hired faster.
+          <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+            Meet Zeva
+          </span>
+          🤖: "I give AI-powered insights to boost your portfolio and land jobs
+          faster — enter your GitHub and get surprised!"
         </p>
 
         {/* Input */}
@@ -56,7 +59,7 @@ export default function Home() {
         )}
       </div>
       <p className="absolute bottom-4 text-xs text-gray-500">
-        Developed and designed by: Onyekachukwu Anene
+        Developed by: Onyekachukwu Anene
       </p>
     </main>
   );
