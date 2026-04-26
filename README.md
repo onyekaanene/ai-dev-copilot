@@ -57,7 +57,7 @@ Returns:
 Frontend       Next.js 16 (App Router) + TypeScript
 Styling        Tailwind CSS (v4)
 Backend        Next.js API Routes
-AI             Claude (Anthropic API)
+AI             Anthropic claude-haiku-4-5
 Data Source    GitHub REST API
 Deployment     Vercel
 ```
