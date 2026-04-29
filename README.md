@@ -5,7 +5,7 @@
  Coming Soon  
 **📂 Repo:** https://github.com/onyekaanene/ai-dev-copilot  
 
-**🔗 Live Link:** [ai-dev-copilot.onyekaanene.com](https://ai-dev-copilot.onyekaanene.com) &nbsp;|&nbsp; **📂 Repo:** [github.com/onyekaanene/ai-dev-copilot](https://github.com/onyekaanene/ai-dev-copilot) 
+**🔗 Live Link Demo:** [ai-dev-copilot.onyekaanene.com](https://ai-dev-copilot.onyekaanene.com) &nbsp;|&nbsp; **📂 Repo:** [github.com/onyekaanene/ai-dev-copilot](https://github.com/onyekaanene/ai-dev-copilot) 
 
 ---
 
