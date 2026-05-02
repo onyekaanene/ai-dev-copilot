@@ -2,7 +2,7 @@
 
 > Meet Zeva 🤖, an AI-powered developer tool that analyzes your GitHub profile and gives actionable feedback to help you improve your portfolio and get hired faster.
 
- Coming Soon  
+
 **📂 Repo:** https://github.com/onyekaanene/ai-dev-copilot  
 
 **🔗 Live Link Demo:** [ai-dev-copilot.onyekaanene.com](https://ai-dev-copilot.onyekaanene.com) &nbsp;|&nbsp; **📂 Repo:** [github.com/onyekaanene/ai-dev-copilot](https://github.com/onyekaanene/ai-dev-copilot) 
