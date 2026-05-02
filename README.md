@@ -105,11 +105,11 @@ ai-dev-copilot/
 - [x] Tailwind CSS premium UI
 
 ### 🔜 Coming Soon
-- [ ]Per-repo AI suggestions (“Improve this repo”)
-- [ ]Portfolio score visualization (e.g., 7.5/10)
-- [ ]Save and share analysis reports
-- [ ]Authentication (Supabase)
-- [ ]Recruiter mode (view candidate profiles)
+- [ ] Per-repo AI suggestions (“Improve this repo”)
+- [ ] Portfolio score visualization (e.g., 7.5/10)
+- [ ] Save and share analysis reports
+- [ ] Authentication (Supabase)
+- [ ] Recruiter mode (view candidate profiles)
 
 ---
 
