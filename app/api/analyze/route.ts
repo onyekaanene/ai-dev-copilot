@@ -20,7 +20,7 @@ export async function POST(req: Request) {
       `;
       */
 
-      const prompt = `
+    const prompt = `
         You are a senior software engineer reviewing a developer's GitHub.
 
         Repos:
@@ -60,16 +60,43 @@ export async function POST(req: Request) {
 
     const data = await res.json();
 
-    console.log("Claude response:", JSON.stringify(data, null, 2));
+     const rawText = data?.content?.[0]?.text || "";
 
-    return Response.json({
-      result: data?.content?.[0]?.text || "No AI response returned",
-    });
+     // Remove markdown ```json ... ```
+     const cleanedText = rawText
+       .replace(/```json/g, "")
+       .replace(/```/g, "")
+       .trim();
+
+     console.log("Cleaned text:", cleanedText);
+
+let parsed;
+
+try {
+  parsed = JSON.parse(cleanedText);
+} catch (err) {
+  console.error("JSON Parse Error:", err);
+
+  parsed = {
+    score: 0,
+    summary: "AI response could not be parsed",
+    strengths: [],
+    weaknesses: [],
+    improvements: [],
+  };
+}
+
+    return Response.json(parsed);
   } catch (error) {
     console.error("ERROR:", error);
 
     return Response.json({
-      result: "Error generating AI feedback",
+      score: 0,
+      summary: "Error generating AI feedback",
+      strengths: [],
+      weaknesses: [],
+      improvements: [],
     });
   }
 }
+

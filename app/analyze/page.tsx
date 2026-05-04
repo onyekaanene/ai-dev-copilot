@@ -1,3 +1,5 @@
+import AnalysisDisplay from "./AnalysisDisplay";
+
 type Repo = {
   id: number;
   name: string;
@@ -5,6 +7,14 @@ type Repo = {
   stars: number;
   language: string;
   url: string;
+};
+
+type Analysis = {
+  score: number;
+  summary: string;
+  strengths: string[];
+  weaknesses: string[];
+  improvements: string[];
 };
 
 async function getRepos(username: string): Promise<Repo[]> {
@@ -18,7 +28,7 @@ async function getRepos(username: string): Promise<Repo[]> {
   return res.json();
 }
 
-async function getAnalysis(repos: Repo[]) {
+async function getAnalysis(repos: Repo[]): Promise<Analysis> {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/analyze`, {
     method: "POST",
     headers: {
@@ -29,7 +39,7 @@ async function getAnalysis(repos: Repo[]) {
   });
 
   const data = await res.json();
-  return data.result;
+  return data as Analysis;
 }
 
 export default async function AnalyzePage({
@@ -71,50 +81,7 @@ export default async function AnalyzePage({
         </p>*/}
       </div>
 
-      {/* AI Feedback */}
-      <div className="mb-8 p-6 bg-gray-900/70 border border-gray-800 rounded-2xl">
-        <h2 className="text-xl font-semibold mb-3">
-          AI-powered GitHub portfolio feedback
-        </h2>
-
-        <p className="text-gray-300 whitespace-pre-line">
-          {analysis || "No feedback available"}
-        </p>
-      </div>
-
-      {/* Repo Grid */}
-      <div className="grid md:grid-cols-2 gap-5">
-        {repos.map((repo) => (
-          <div
-            key={repo.id}
-            className="p-5 bg-gray-900/70 border border-gray-800 rounded-xl"
-          >
-            <div className="flex justify-between">
-              <h2 className="font-semibold text-lg">{repo.name}</h2>
-              <span className="text-sm text-gray-400">⭐ {repo.stars}</span>
-            </div>
-
-            <p className="text-gray-400 text-sm mt-2">
-              {repo.description || "No description"}
-            </p>
-
-            <div className="flex justify-between mt-4">
-              <span className="text-xs text-gray-500">
-                {repo.language || "Unknown"}
-              </span>
-
-              <a
-                href={repo.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-400 text-xs hover:underline"
-              >
-                View Repo →
-              </a>
-            </div>
-          </div>
-        ))}
-      </div>
+      <AnalysisDisplay analysis={analysis} repos={repos} />
     </main>
   );
 }
