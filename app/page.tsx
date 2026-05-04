@@ -28,7 +28,7 @@ export default function Home() {
         </p>
 
         {/* Input */}
-        <div className="flex items-center border border-gray-800 bg-gray-900/60 backdrop-blur rounded-xl overflow-hidden shadow-lg">
+        <div className="flex items-center border border-gray-700 bg-gray-900/60 backdrop-blur rounded-xl overflow-hidden shadow-lg">
           <span className="px-4 py-3 text-gray-500 border-r border-gray-800">
             github.com/
           </span>
