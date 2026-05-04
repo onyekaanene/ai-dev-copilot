@@ -3,6 +3,7 @@ export async function POST(req: Request) {
     const body = await req.json();
     const repos = body.repos;
 
+    /*
     const prompt = `
       You are a senior software engineer reviewing a junior developer's GitHub.
 
@@ -17,7 +18,26 @@ export async function POST(req: Request) {
 
       Be concise and structured.
       `;
+      */
 
+      const prompt = `
+        You are a senior software engineer reviewing a developer's GitHub.
+
+        Repos:
+        ${JSON.stringify(repos, null, 2)}
+
+        Return ONLY valid JSON in this format:
+
+        {
+          "score": number (1-10),
+          "summary": "short summary",
+          "strengths": ["point 1", "point 2"],
+          "weaknesses": ["point 1", "point 2"],
+          "improvements": ["point 1", "point 2"]
+        }
+
+        Do not include any text outside JSON.
+        `;
 
     const res = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",

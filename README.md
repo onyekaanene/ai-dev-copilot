@@ -103,10 +103,10 @@ ai-dev-copilot/
 - [x] Server-side rendering for /analyze
 - [x] Production-ready build
 - [x] Tailwind CSS premium UI
+- [x] Portfolio score visualization (e.g., 7.5/10)
 
 ### 🔜 Coming Soon
 - [ ] Per-repo AI suggestions (“Improve this repo”)
-- [ ] Portfolio score visualization (e.g., 7.5/10)
 - [ ] Save and share analysis reports
 - [ ] Authentication (Supabase)
 - [ ] Recruiter mode (view candidate profiles)
