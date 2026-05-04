@@ -108,7 +108,7 @@ function CategoryChart({
               color: "#f9fafb",
               fontSize: 12,
             }}
-            formatter={(value: number) => [value, "items"]}
+            formatter={(value) => [value, "items"]}
           />
           <Bar dataKey="count" radius={[6, 6, 0, 0]}>
             {data.map((entry, index) => (
