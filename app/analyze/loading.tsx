@@ -5,8 +5,10 @@ export default function Loading() {
       <div className="w-10 h-10 border-4 border-gray-700 border-t-white rounded-full animate-spin" />
 
       {/* Text */}
-      <p className="text-lg text-gray-300">Analyzing your GitHub profile...</p>
-      
+      <p className="text-lg text-gray-300">
+        🤖: "I am analyzing your GitHub profile."
+      </p>
+
       <p className="text-sm text-gray-500">
         Reviewing repositories, code quality, and project impact
       </p>
