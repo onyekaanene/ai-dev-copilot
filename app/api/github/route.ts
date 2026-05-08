@@ -7,14 +7,13 @@ export async function GET(req: Request) {
   }
 
   const res = await fetch(
-    `https://api.github.com/users/${username}/repos?sort=updated`,
+    `https://api.github.com/users/${username}/repos?sort=updated&per_page=100`,
   );
 
   const data = await res.json();
 
   const filtered = data
     .filter((repo: any) => !repo.fork)
-    .slice(0, 8)
     .map((repo: any) => ({
       id: repo.id,
       name: repo.name,
