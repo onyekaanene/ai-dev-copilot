@@ -30,7 +30,7 @@ Many many developers struggle to understand why their GitHub isn’t converting 
 
 ## 📸 Screenshots
 
-![Landing Page](landing.png)
+![Landing Page](screenshots/landing.png)
 
 ---
 
