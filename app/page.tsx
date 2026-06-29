@@ -1,8 +1,10 @@
 "use client";
+// app/page.tsx
 
 import { useState } from "react";
 import Link from "next/link"; // Add this import
 
+// Main page component
 export default function Home() {
   const [username, setUsername] = useState("");
 
